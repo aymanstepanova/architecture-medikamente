@@ -1,0 +1,98 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="P4-Payment" id="dfd-p4">
+    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hdr" value="&lt;h1&gt;&lt;b&gt;DFD P4 — Оплата медицинских услуг (As-Is)&lt;br&gt;&lt;/b&gt;&lt;span style=&quot;font-size:11px;color:#333333&quot;&gt;ККМ — контрольно-кассовая машина (фискализация); 1С; теневой Excel (PRV-007)&lt;/span&gt;&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="125" y="12" width="920" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="ee_pt" value="Patient" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="280" y="170" width="100" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="ee_cas" value="Cashier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="740" y="170" width="100" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" value="4.0 Приём оплаты,&#xa;фискация" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="450" y="292" width="160" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="sys_kkm" value="ККМ&#xa;(контрольно-кассовая&#xa;машина, фиск.)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="740" y="292" width="140" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="d_1c" value="D1: 1С Бухгалтерия&#xa;(файловый режим)" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="710" y="440" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="d_xls" value="D2: Excel кассы&#xa;(двойной учёт)" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="430" y="440" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="endArrow=classic;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" source="ee_pt" target="p4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1l" value="оплата&#xa;ПДн / платёжные" style="edgeLabel;html=1;align=center;resizable=0;points=[];fontColor=#b85450;fontStyle=1" parent="e1" connectable="0" vertex="1">
+          <mxGeometry x="-0.2" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" style="endArrow=classic;html=1;" parent="1" source="ee_cas" target="p4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2l" value="операции кассира" style="edgeLabel;html=1;align=center;resizable=0;points=[];" parent="e2" connectable="0" vertex="1">
+          <mxGeometry x="-0.15" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" style="endArrow=classic;html=1;" parent="1" source="p4" target="sys_kkm" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3l" value="фискальные данные" style="edgeLabel;html=1;align=center;resizable=0;points=[];" parent="e3" connectable="0" vertex="1">
+          <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" style="endArrow=classic;html=1;" parent="1" source="sys_kkm" target="d_1c" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4l" value="учёт (OLE/TCP)" style="edgeLabel;html=1;align=center;resizable=0;points=[];" parent="e4" connectable="0" vertex="1">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" style="endArrow=classic;html=1;dashed=1;strokeColor=#b85450;" parent="1" source="p4" target="d_xls" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5l" value="дублирующий учёт (теневой)&#xa;PRV-007" style="edgeLabel;html=1;align=center;resizable=0;points=[];fontColor=#b85450;fontStyle=1" parent="e5" connectable="0" vertex="1">
+          <mxGeometry x="-0.2" y="2" relative="1" as="geometry">
+            <mxPoint x="-2" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lee1K44sv5aL1FGm_IJD-1" value="Легенда" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="155" y="610" width="860" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="Lee1K44sv5aL1FGm_IJD-2" value="&lt;b&gt;Потоки:&lt;/b&gt; &lt;span style=&quot;color:#b85450&quot;&gt;красный&lt;/span&gt; — ПДн/платёжные; &lt;b&gt;пунктир&lt;/b&gt; — теневой поток (PRV-007).&lt;br&gt;&lt;b&gt;Хранилища D:&lt;/b&gt; &lt;span style=&quot;color:#9673a6&quot;&gt;D1&lt;/span&gt; — сплошная рамка, канонический учёт в 1С; &lt;span style=&quot;color:#b85450&quot;&gt;D2&lt;/span&gt; — &lt;b&gt;красная пунктирная&lt;/b&gt; рамка и заливка — теневой Excel кассы (двойной учёт), вне основной модели контроля (в PlantUML — элемент &lt;i&gt;storage&lt;/i&gt;)." style="text;html=1;strokeColor=none;fillColor=#f5f5f5;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" parent="Lee1K44sv5aL1FGm_IJD-1" vertex="1">
+          <mxGeometry x="20" y="28" width="820" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="Lee1K44sv5aL1FGm_IJD-3" value="Внешний субъект (EE)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" parent="Lee1K44sv5aL1FGm_IJD-1" vertex="1">
+          <mxGeometry x="40" y="100" width="130" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="Lee1K44sv5aL1FGm_IJD-4" value="Процесс (P)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" parent="Lee1K44sv5aL1FGm_IJD-1" vertex="1">
+          <mxGeometry x="190" y="100" width="110" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="Lee1K44sv5aL1FGm_IJD-5" value="D1: хранилище&#xa;(1С)" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#e1d5e7;strokeColor=#9673a6;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontStyle=1" parent="Lee1K44sv5aL1FGm_IJD-1" vertex="1">
+          <mxGeometry x="320" y="98" width="100" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="Lee1K44sv5aL1FGm_IJD-10" value="D2: теневой&#xa;Excel" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;fontStyle=1" parent="Lee1K44sv5aL1FGm_IJD-1" vertex="1">
+          <mxGeometry x="440" y="98" width="100" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="Lee1K44sv5aL1FGm_IJD-13" value="Система (SYS): ККМ — контрольно-кассовая машина (фиск.)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=10" parent="Lee1K44sv5aL1FGm_IJD-1" vertex="1">
+          <mxGeometry x="585" y="95" width="200" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="Lee1K44sv5aL1FGm_IJD-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Lee1K44sv5aL1FGm_IJD-8" target="d_xls" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Lee1K44sv5aL1FGm_IJD-8" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;div style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;&amp;nbsp;Типовый поток оплаты (процесс P4, DFD P4):&lt;/div&gt;&lt;div style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;&amp;nbsp;двойной учёт Excel и 1С&lt;/div&gt;&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="140" y="452.5" width="270" height="45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
