@@ -32,19 +32,19 @@
             <mxPoint x="-2" y="-14" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="iOxaq75Jai6FJuWhQT_T-1" value="Легенда" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="iOxaq75Jai6FJuWhQT_T-1" value="Легенда" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="155" y="565" width="860" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="iOxaq75Jai6FJuWhQT_T-2" value="&lt;b&gt;Потоки:&lt;/b&gt; &lt;span style=&quot;color:#b85450&quot;&gt;красный&lt;/span&gt; — чувствительные ПДн (операции бухгалтера, проводки, кадровые данные); обычная стрелка — чтение / запись учётных записей в 1С.&lt;br&gt;&lt;b&gt;Хранилище D1:&lt;/b&gt; сплошная фиолетовая рамка — «1С:Бухгалтерия» в &lt;b&gt;файловом режиме&lt;/b&gt; (файл БД на сервере, кадры). На P5 одно хранилище; теневого Excel (как в P4) нет." style="text;html=1;strokeColor=none;fillColor=#f5f5f5;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="iOxaq75Jai6FJuWhQT_T-1">
+        <mxCell id="iOxaq75Jai6FJuWhQT_T-2" value="&lt;b&gt;Потоки:&lt;/b&gt; &lt;span style=&quot;color:#b85450&quot;&gt;красный&lt;/span&gt; — чувствительные ПДн (операции бухгалтера, проводки, кадровые данные); обычная стрелка — чтение / запись учётных записей в 1С." style="text;html=1;strokeColor=none;fillColor=#f5f5f5;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" parent="iOxaq75Jai6FJuWhQT_T-1" vertex="1">
           <mxGeometry x="20" y="28" width="820" height="58" as="geometry" />
         </mxCell>
-        <mxCell id="iOxaq75Jai6FJuWhQT_T-3" value="Внешний субъект (EE)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="iOxaq75Jai6FJuWhQT_T-1">
+        <mxCell id="iOxaq75Jai6FJuWhQT_T-3" value="Внешний субъект (EE)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" parent="iOxaq75Jai6FJuWhQT_T-1" vertex="1">
           <mxGeometry x="40" y="100" width="130" height="42" as="geometry" />
         </mxCell>
-        <mxCell id="iOxaq75Jai6FJuWhQT_T-4" value="Процесс (P)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="iOxaq75Jai6FJuWhQT_T-1">
+        <mxCell id="iOxaq75Jai6FJuWhQT_T-4" value="Процесс (P)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" parent="iOxaq75Jai6FJuWhQT_T-1" vertex="1">
           <mxGeometry x="190" y="100" width="110" height="42" as="geometry" />
         </mxCell>
-        <mxCell id="iOxaq75Jai6FJuWhQT_T-5" value="D1: 1С Бухгалтерия&#xa;(файл БД)" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#e1d5e7;strokeColor=#9673a6;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontStyle=1" vertex="1" parent="iOxaq75Jai6FJuWhQT_T-1">
+        <mxCell id="iOxaq75Jai6FJuWhQT_T-5" value="D1: 1С Бухгалтерия&#xa;(файл БД)" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#e1d5e7;strokeColor=#9673a6;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontStyle=1" parent="iOxaq75Jai6FJuWhQT_T-1" vertex="1">
           <mxGeometry x="320" y="100" width="120" height="46" as="geometry" />
         </mxCell>
       </root>
