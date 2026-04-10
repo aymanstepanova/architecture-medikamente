@@ -1,0 +1,71 @@
+<mxfile host="app.diagrams.net" agent="5.0">
+  <diagram name="P1-Scheduling" id="dfd-p1">
+    <mxGraphModel dx="1414" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="leg" parent="1" style="text;html=1;strokeColor=none;fillColor=#f5f5f5;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" value="Легенда: EE — внешний субъект; P — процесс; D — хранилище. Красный текст — ПДн/чувствительный поток." vertex="1">
+          <mxGeometry height="50" width="520" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ee_pat" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="Patient&#xa;(пациент)" vertex="1">
+          <mxGeometry height="70" width="120" x="80" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ee_adm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="Administrator&#xa;(ресепшен)" vertex="1">
+          <mxGeometry height="70" width="140" x="320" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ee_doc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="Doctor" vertex="1">
+          <mxGeometry height="70" width="100" x="560" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" value="1.0 Запись на приём,&#xa;ведение журнала" vertex="1">
+          <mxGeometry height="80" width="180" x="300" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="d_journal" parent="1" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#e1d5e7;strokeColor=#9673a6;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontStyle=1" value="D1: Journal-Doctor-FIO&#xa;(Excel)" vertex="1">
+          <mxGeometry height="70" width="160" x="90" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="d_fold" parent="1" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#e1d5e7;strokeColor=#9673a6;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontStyle=1" value="D2: Journals&#xa;(папка FileServer)" vertex="1">
+          <mxGeometry height="70" width="180" x="480" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="ee_pat" style="endArrow=classic;html=1;exitX=1;exitY=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitDx=0;exitDy=0;" target="p1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1l" connectable="0" parent="e1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#b85450;fontStyle=1" value="запрос на приём" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="ee_adm" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="p1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2l" connectable="0" parent="e2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#b85450;fontStyle=1" value="ввод/корректировка" vertex="1">
+          <mxGeometry relative="1" x="-0.2" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="ee_doc" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" target="p1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3l" connectable="0" parent="e3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="запрос расписания" vertex="1">
+          <mxGeometry relative="1" x="-0.2" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="p1" style="endArrow=classic;html=1;exitX=0;exitY=0.838;entryX=0.5;entryY=0;exitDx=0;exitDy=0;exitPerimeter=0;" target="d_journal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4l" connectable="0" parent="e4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#b85450;fontStyle=1" value="записи приёма (ФИО, время) ПДн" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="p1" style="endArrow=classic;html=1;exitX=1;exitY=0.75;entryX=0.5;entryY=0;dashed=1;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" target="d_fold">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5l" connectable="0" parent="e5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#b85450;" value="файлы/копии журналов" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
