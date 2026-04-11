@@ -1,0 +1,24 @@
+@startuml dfd_analytics_as_is
+!include _dfd-style.puml
+
+title DFD **Аналитический контур As-Is** (Task 1)\n//Jupyter + Python, Excel с FileServer — PRV-010//
+
+left to right direction
+
+rectangle "Business analyst\n(IT)" as an <<EE>>
+rectangle "A.0 Подготовка отчётов\n(P&L, ABC и др.)" as pa <<P>>
+rectangle "Jupyter + Python" as ju <<SYS>>
+
+database "D1: Excel на FileServer\n(общий диск)" as d1
+storage "D2: Отчёты / ноутбуки\n(локально)" as d2
+
+an --> pa : запрос аналитики
+d1 -[#B85450]-> pa : **выгрузки Excel**\n//ПДн + операционка//
+pa --> ju : расчёты / скрипты
+pa -[#B85450,dashed]-> d2 : **результаты без проверки на утечку**\n//PRV-010//
+
+note bottom of d2
+  Нет маскирования, нет версионирования
+  наборов, отчёты без DLP — Task 1, PRV-010
+end note
+@enduml

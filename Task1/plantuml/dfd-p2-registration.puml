@@ -1,0 +1,24 @@
+@startuml dfd_p2_registration
+!include _dfd-style.puml
+
+title DFD **P2** — Регистрация пациента и ведение списков (As-Is)\n//Patients.xlsx, Patients//
+
+left to right direction
+
+rectangle "Patient" as pat <<EE>>
+rectangle "Administrator" as adm <<EE>>
+rectangle "2.0 Регистрация,\nведение списков" as p2 <<P>>
+
+database "D1: Patients.xlsx" as d1
+database "D2: Patients\n(папка)" as d2
+
+pat -[#B85450]-> p2 : **анкетные данные**\n//ПДн//
+adm -[#B85450]-> p2 : **ввод / обновление**\n//ПДн//
+
+p2 -[#B85450]-> d1 : **список пациентов**\n//ПДн//
+p2 ..> d2 : структура папок / ссылки
+
+legend right
+  | Красные стрелки: **ПДн** |
+endlegend
+@enduml

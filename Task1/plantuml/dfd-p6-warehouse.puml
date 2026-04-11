@@ -1,0 +1,25 @@
+@startuml dfd_p6_warehouse
+!include _dfd-style.puml
+
+title DFD **P6** — Учёт ТМЦ и закупок (As-Is)\n//1С Торговля ↔ 1С Бухгалтерия (OLE/TCP, PRV-004)//
+
+left to right direction
+
+rectangle "Warehouse keeper" as wh <<EE>>
+rectangle "6.0 Учёт ТМЦ, закупки" as p6 <<P>>
+
+database "D1: 1С Торговля и склад" as d1
+database "D2: 1С Бухгалтерия" as d2
+
+wh --> p6 : операции склада
+p6 --> d1 : учёт ТМЦ
+
+d1 -[#B85450]-> d2 : **OLE/TCP синхронизация**\n//канал без шифрования (As-Is, Task 3)//
+d2 -[#B85450]-> d1 : **обратный обмен**
+
+note bottom of d1
+  Двунаправленный обмен между хранилищами
+  отражает интеграцию As-Is без отдельного
+  процесса-посредника в Excel.
+end note
+@enduml

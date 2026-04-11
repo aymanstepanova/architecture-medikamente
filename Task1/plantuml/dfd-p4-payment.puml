@@ -1,0 +1,27 @@
+@startuml dfd_p4_payment
+!include _dfd-style.puml
+
+title DFD **P4** — Оплата медицинских услуг (As-Is)\n//ККМ (контрольно-кассовая машина), 1С, теневой Excel (PRV-007)//
+
+left to right direction
+
+rectangle "Patient" as pat <<EE>>
+rectangle "Cashier" as cas <<EE>>
+rectangle "4.0 Приём оплаты,\nфискация" as p4 <<P>>
+rectangle "ККМ\n(контрольно-кассовая машина,\nфискализация)" as kkm <<SYS>>
+
+database "D1: 1С Бухгалтерия\n(файловый режим)" as d1
+storage "D2: Excel кассы\n(двойной учёт)" as d2
+
+pat -[#B85450]-> p4 : **оплата**\n//ПДн / платёжные//
+cas --> p4 : операции кассира
+p4 --> kkm : фискальные данные
+kkm --> d1 : учёт (OLE/TCP)
+
+p4 -[#B85450,dashed]-> d2 : **дублирующий учёт (теневой)**\n//PRV-007//
+
+note right of d2
+  Типовый поток оплаты (процесс P4, DFD P4):
+  двойной учёт Excel и 1С
+end note
+@enduml
