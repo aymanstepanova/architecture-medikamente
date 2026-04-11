@@ -18,7 +18,7 @@
 **Как отрисовать**
 
 - [Онлайн-сервер PlantUML](https://www.plantuml.com/plantuml/uml/) — вставить текст `.puml`.
-- **Расширение VS Code / Cursor:** PlantUML (preview по `Alt+D` или из палитры).
+- **Расширение VS Code** (или другого редактора) **PlantUML:** превью по `Alt+D` или из палитры команд.
 - **CLI:** при установленном [PlantUML](https://plantuml.com/starting) и Graphviz:  
   `plantuml -tpng dfd-p1-scheduling.puml`
 
