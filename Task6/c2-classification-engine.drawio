@@ -1,0 +1,116 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram id="c2-class" name="C2 Classification Engine">
+    <mxGraphModel dx="1783" dy="1051" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c2_title" value="&lt;h1&gt;C4 Level 2 — Движок классификации и политик&amp;nbsp;&lt;/h1&gt;&lt;h1&gt;(trusted ingestion)&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="140" y="60" width="1320" height="110" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="Граница: движок классификации" c4Type="SystemScopeBoundary" c4Application="Часть платформы «Медикаменте»" label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;&lt;div style=&quot;&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;&quot;&gt;[%c4Application%]&lt;/div&gt;" id="c2_boundary">
+          <mxCell style="rounded=1;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#444444;fontColor=#333333;align=center;verticalAlign=top;spacing=10;dashPattern=8 4;movable=1;resizable=1;rotatable=1;deletable=1;locked=0;connectable=1;allowArrows=0;metaEdit=1;editable=1;" parent="1" vertex="1">
+            <mxGeometry x="85" y="360" width="1430" height="582" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Ingestion API" c4Type="Container" c4Technology="Java / Spring Boot, Kubernetes" c4Description="REST/Kafka: приём файлов, событий, потоков из платформы" label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2_ing">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#438DD5;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#3C7FC0;fontStyle=1;metaEdit=1;resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="125" y="430" width="280" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Classification core" c4Type="Container" c4Technology="Java / Python" c4Description="Правила, словари, ML-скоринг чувствительных полей (CLS-01…09)" label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2_cls">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#438DD5;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#3C7FC0;fontStyle=1;metaEdit=1;resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="525" y="430" width="280" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Policy &amp; Tag Catalog" c4Type="Container" c4Technology="Java, PostgreSQL" c4Description="Политики, теги, версии правил; API для движка" label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2_pol">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#438DD5;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#3C7FC0;fontStyle=1;metaEdit=1;resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="915" y="430" width="280" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Message bus" c4Type="Container" c4Technology="Kafka-совместимый / Redis Streams" c4Description="Очередь батчей и событий для воркеров" label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2_bus">
+          <mxCell style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;direction=south;fillColor=#438DD5;fontColor=#ffffff;strokeColor=#3C7FC0;fontStyle=1;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="125" y="610" width="280" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Ingestion workers" c4Type="Container" c4Technology="Kubernetes Jobs" c4Description="Масштабируемая обработка, ретраи, идемпотентность" label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2_wrk">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#438DD5;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#3C7FC0;fontStyle=1;metaEdit=1;resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="525" y="610" width="280" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Trusted loader" c4Type="Container" c4Technology="Java" c4Description="Запись с метками в Bronze; маршрутизация в Silver/Gold" label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2_load">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#438DD5;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#3C7FC0;fontStyle=1;metaEdit=1;resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="915" y="610" width="280" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="policy_db" c4Type="Container" c4Technology="PostgreSQL" c4Description="Метаданные политик, теги, аудит применения правил (хранилище Policy &amp; Tag Catalog)" label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2_pg">
+          <mxCell style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=7.162162162162076;fillColor=#438DD5;fontColor=#ffffff;strokeColor=#3C7FC0;metaEdit=1;resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="1295" y="440" width="200" height="100" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Metrics &amp; lineage" c4Type="Container" c4Technology="Victoria Metrics, OpenTelemetry" c4Description="Метрики качества классификации, задержки, ошибок" label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2_vm">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#438DD5;fontColor=#ffffff;align=center;arcSize=6;strokeColor=#3C7FC0;fontStyle=1;metaEdit=1;resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="525" y="800" width="280" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Платформа «Медикаменте» (источники)" c4Type="Software System" c4Description="Операционные сервисы, файлы миграции, CRM" label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2_src">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1168BD;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E5CA8;metaEdit=1;resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="105" y="210" width="320" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="DWH / ClickHouse" c4Type="Software System" c4Description="Bronze / Silver / Gold; RLS, маскирование на витринах" label="&lt;font style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="c2_ch">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#999999;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#6B6B6B;metaEdit=1;resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="825" y="970" width="460" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="JSON/Proto" c4Description="Сырые данные" label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="c2_e1">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="c2_src" target="c2_ing" edge="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="классификация" label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="c2_e2">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;" parent="1" source="c2_ing" target="c2_cls" edge="1">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="политики" label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="c2_e3">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;startArrow=blockThin;startFill=1;" parent="1" source="c2_cls" target="c2_pol" edge="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="персист" label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="c2_e4">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;" parent="1" source="c2_pol" target="c2_pg" edge="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="очередь" label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="c2_e5">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;" parent="1" source="c2_cls" target="c2_bus" edge="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="обработка" label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="c2_e6">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;" parent="1" source="c2_bus" target="c2_wrk" edge="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="trusted load" label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="c2_e7">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;" parent="1" source="c2_wrk" target="c2_load" edge="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Technology="TLS" c4Description="Bronze + теги" label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: center&quot;&gt;[%c4Technology%]&lt;/div&gt;" id="c2_e8">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;" parent="1" source="c2_load" target="c2_ch" edge="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Relationship" c4Description="метрики" label="&lt;div style=&quot;text-align: center&quot;&gt;&lt;b&gt;%c4Description%&lt;/b&gt;&lt;/div&gt;" id="c2_e9">
+          <mxCell style="endArrow=blockThin;html=1;fontSize=10;strokeColor=#828282;endFill=1;dashed=1;" parent="1" source="c2_wrk" target="c2_vm" edge="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
