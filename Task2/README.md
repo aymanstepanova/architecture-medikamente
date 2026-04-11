@@ -5,13 +5,14 @@
 - Диаграмма **контекста** в модели **C4**.
 - **Проект архитектуры MVP** (целевой контур на уровне контекста).
 
+![c4-context-mvp.png](c4-context-mvp.png)
+
 ## Состав каталога
 
 | Файл | Содержание |
 |------|------------|
 | [c4-context-mvp.drawio](c4-context-mvp.drawio) | **C4 Context:** платформа «Медикаменте» (To-Be), персоны, внешние Laboratory и Payment network, связи HTTPS / REST |
 | [c4-context-and-mvp.md](c4-context-and-mvp.md) | Описание системы, границы MVP, акторы, потоки, связь с Task 3 и **Task 6** |
-
 Согласование с движком классификации: [Task6/c2-classification-engine.md](../Task6/c2-classification-engine.md).
 
 ## Рекомендации
