@@ -2,6 +2,8 @@
 
 Диаграмма: [ishikawa-migration-bottlenecks.drawio](ishikawa-migration-bottlenecks.drawio).
 
+![ishikawa-migration-bottlenecks.png](ishikawa-migration-bottlenecks.png)
+
 **Эффект (голова «рыбы»):** агрегированный риск срыва миграции, потери или искажения данных, нарушения конфиденциальности при переходе от связки **файловый сервер + Excel + 1С** к платформе и DWH (см. [Task 1](../Task1/data-privacy-problems-and-dfd-index.md), описание «монолита» и P1–P8).
 
 ## Категории причин (ребра)
