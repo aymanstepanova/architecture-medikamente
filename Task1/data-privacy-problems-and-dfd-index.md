@@ -62,7 +62,19 @@
 | [dfd-p7-laboratory.drawio](dfd-p7-laboratory.drawio) | [plantuml/dfd-p7-laboratory.puml](plantuml/dfd-p7-laboratory.puml) | P7 | Лаборатория: ручной/неформализованный поток в Registry |
 | [dfd-p8-exchange.drawio](dfd-p8-exchange.drawio) | [plantuml/dfd-p8-exchange.puml](plantuml/dfd-p8-exchange.puml) | P8 | Exchange как канал ПДн вне учётных систем |
 | [dfd-analytics-as-is.drawio](dfd-analytics-as-is.drawio) | [plantuml/dfd-analytics-as-is.puml](plantuml/dfd-analytics-as-is.puml) | Аналитический контур As-Is | Jupyter/Python по Excel с FileServer — вне P1–P8, но обязателен для полноты privacy-анализа |
+| [dfd-analytics-to-be.drawio](dfd-analytics-to-be.drawio) | [plantuml/dfd-analytics-to-be.puml](plantuml/dfd-analytics-to-be.puml) | Аналитический контур To-Be | Классификация до загрузки, Data Lake, DLP, аудит и политики доступа (меры защиты для PRV-010) |
 
 Подробности по рендеру PlantUML: [plantuml/README.md](plantuml/README.md).
 
 **Условные обозначения на диаграммах:** сплошные стрелки — основной учётный поток; **красный** цвет подписи потока или пунктир — **чувствительные ПДн/медданные** или **проблемная/неформализованная** зона по кейсу.
+
+## Явный инструмент классификации и меры защиты (To-Be)
+
+В целевом контуре используется отдельный **Classification Engine** (rules + ML) с привязкой к **Policy & Tag Catalog**.  
+Технические меры на To-Be DFD:
+
+- **mTLS + OIDC** на входе в ingestion-контур.
+- **SSE-KMS** для Data Lake (Bronze).
+- **RLS/маскирование** для trusted-витрин (Silver/Gold).
+- **DLP** для почтового/экспортного контура.
+- **SIEM/audit** по доступам и результатам классификации.

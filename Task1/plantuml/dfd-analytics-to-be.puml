@@ -1,0 +1,45 @@
+@startuml dfd_analytics_to_be
+!include _dfd-style.puml
+
+title DFD **Аналитический контур To-Be** (Task 1)\n//классификация + защитные меры до загрузки в озеро данных//
+
+left to right direction
+
+rectangle "Business analyst\n(IT)" as an <<EE>>
+rectangle "A.0 Подготовка отчётов\n(To-Be)" as pa <<P>>
+
+rectangle "Ingestion API\n(mTLS + OIDC)" as api <<SYS>>
+rectangle "Classification Engine\n(Java + NLP/Rules)" as cls <<SYS>>
+rectangle "Policy & Tag Catalog\n(OPA + Data Catalog)" as pol <<SYS>>
+rectangle "DLP Mail Gateway\n(Microsoft Purview DLP)" as dlp <<SYS>>
+rectangle "SIEM / Audit\n(ELK + OpenTelemetry)" as siem <<SYS>>
+
+database "D1: Data Lake (Bronze)\n(MinIO/S3, SSE-KMS)" as d1
+database "D2: Trusted marts (Silver/Gold)\n(ClickHouse + RLS/Masking)" as d2
+
+an --> pa : запрос аналитики
+pa --> api : запрос набора
+api --> cls : пакет данных
+cls --> pol : чтение политик CLS-01..09
+cls --> d1 : запись с тегами\nклассификации и lineage
+d1 --> d2 : trusted load\nпо политикам доступа
+pa --> d2 : BI/отчёты\nтолько по роли
+
+api -[#B85450]-> siem : аудит доступа
+cls -[#B85450]-> siem : аудит классификации
+pa -[#B85450,dashed]-> dlp : экспорт отчёта\nчерез DLP-политику
+
+note bottom of cls
+  Явный инструмент классификации:
+  rules + ML, теги конфиденциальности,
+  блокировка загрузки без метки.
+end note
+
+note bottom of d2
+  Контроли To-Be:
+  - шифрование at rest (SSE-KMS)
+  - mTLS/OIDC на входе
+  - RLS и маскирование в витринах
+  - централизованный аудит
+end note
+@enduml
