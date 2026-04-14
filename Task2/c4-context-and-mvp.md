@@ -11,6 +11,7 @@
 На уровне **C4 Context** показана одна целевая **программная система** — **платформа «Медикаменте»** (To-Be), с которой взаимодействуют люди и внешние системы. Внутреннее разбиение на сервисы на этом уровне **не раскрывается** (детализация на **C2 с конкретными технологиями** вынесена в [Task 6: C2 движка классификации](../Task6/c2-classification-engine.md)).
 
 Файл диаграммы: [c4-context-mvp.drawio](c4-context-mvp.drawio).
+Диаграмма контейнеров (C2): [c4-container-mvp.drawio](c4-container-mvp.drawio).
 
 ---
 
@@ -72,3 +73,20 @@
 | Task 3 | Классы CLS-* — политики, которые реализует слой governance |
 | Task 6 | Движок классификации — внутренний контейнерный уровень относительно этой системы |
 | Task 5 | Миграция с Legacy в платформу |
+
+---
+
+## 8. Уточнение к замечанию ревью (C2 с конкретными технологиями)
+
+| Контейнер (C2) | Технологии |
+|----------------|------------|
+| Ingestion API | Java (Spring Boot), OIDC, mTLS |
+| Classification core | Java + rule engine/ML (NLP/regex/rules) |
+| Policy & Tag Catalog | Java (Spring Boot), PostgreSQL; интеграция с OPA и Data Catalog API |
+| policy_db | PostgreSQL |
+| Message bus | Kafka |
+| Ingestion workers | Kubernetes (Deployment/Jobs) |
+| Trusted loader | Spark/Flink или batch-loader в Kubernetes |
+| Data Lake / Lakehouse | MinIO/S3 (Bronze), ClickHouse marts (Silver/Gold) |
+| Metrics & lineage | OpenTelemetry + Victoria Metrics |
+

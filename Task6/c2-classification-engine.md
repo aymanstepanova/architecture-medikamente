@@ -16,16 +16,16 @@
 
 ## 2. Контейнеры (кратко)
 
-| Контейнер | Назначение |
-|-----------|------------|
-| **Ingestion API** | Приём пакетов и событий (файлы миграции, события CRM, выгрузки); аутентификация, rate limiting, схема контракта. |
-| **Classification core** | Применение правил и ML-моделей к полям и документам; сопоставление с классами **CLS-01…09** ([Task 3](../Task3/data-classification-encryption-at-rest-and-in-transit.md)). |
-| **Policy & Tag Catalog** | Хранение и версионирование политик, словарей тегов; API для ядра классификации. |
-| **policy_db (PostgreSQL)** | Метаданные политик, журнал применения, аудит. |
-| **Message bus** | Очередь задач на тяжёлую обработку, ретраи, обратное давление. |
-| **Ingestion workers** | Горизонтально масштабируемые воркеры (**Kubernetes Jobs** / Deployment). |
-| **Trusted loader** | Запись в **Bronze** с неизменяемыми метками конфиденциальности; маршрутизация в Silver/Gold по политикам. |
-| **Metrics & lineage** | **Victoria Metrics** + OpenTelemetry: задержки, доля ошибок классификации, качество разметки. |
+| Контейнер | Технологии | Назначение |
+|-----------|------------|------------|
+| **Ingestion API** | Java (Spring Boot), Kubernetes | Приём пакетов и событий (файлы миграции, события CRM, выгрузки); аутентификация, rate limiting, схема контракта. |
+| **Classification core** | Java/Python, rule engine/ML | Применение правил и ML-моделей к полям и документам; сопоставление с классами **CLS-01…09** ([Task 3](../Task3/data-classification-encryption-at-rest-and-in-transit.md)). |
+| **Policy & Tag Catalog** | Java (Spring Boot), OPA integration, Data Catalog API | API-слой для политик и словарей тегов; версионирование и управление правилами. |
+| **policy_db** | PostgreSQL | Хранение метаданных политик, журнала применения и аудита для `Policy & Tag Catalog`. |
+| **Message bus** | Kafka | Очередь задач на тяжёлую обработку, ретраи, обратное давление. |
+| **Ingestion workers** | Kubernetes Jobs / Deployment | Горизонтально масштабируемые воркеры обработки. |
+| **Trusted loader** | Java | Запись в **Bronze** с неизменяемыми метками конфиденциальности; маршрутизация в Silver/Gold по политикам. |
+| **Metrics & lineage** | Victoria Metrics + OpenTelemetry | Задержки, доля ошибок классификации, качество разметки. |
 
 **Вне границы движка (на диаграмме):**
 
