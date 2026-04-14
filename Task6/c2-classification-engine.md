@@ -1,6 +1,6 @@
 # Task 6 — C2: движок классификации данных перед загрузкой в хранилище
 
-Опора: [Task 2: C4 Context](../Task2/c4-context-and-mvp.md), [Task 3: классы данных CLS-*](../Task3/data-classification-encryption-at-rest-and-in-transit.md); стек CTO — в сводке Task 3 (ориентир Java, PostgreSQL, ClickHouse, Elasticsearch, Kubernetes, Victoria Metrics).
+Опора: [Task 2: C4 Context](../Task2/c4-context-and-mvp.md), [Task 3: классы данных CLS-*](../Task3/data-classification-encryption-at-rest-and-in-transit.md); стек CTO — в сводке Task 3 (ориентир Java, PostgreSQL, ClickHouse, Elasticsearch, Kubernetes, Victoria Metrics, MinIO/S3).
 
 Диаграмма: [c2-classification-engine.drawio](c2-classification-engine.drawio).
 
@@ -10,7 +10,7 @@
 
 ## 1. Роль движка в общей архитектуре
 
-Движок реализует этап **«классификация до аналитики»**: между **сырыми данными** из платформы «Медикаменте» и **зоной DWH/BI** вставлен контур **governance + classification**. На [C4 Context (Task 2)](../Task2/c4-context-and-mvp.md) этот контур входит в состав платформы как единый блок; здесь он раскрыт на **контейнеры (C2)**.
+Движок реализует этап **«классификация до аналитики»**: между **сырыми данными** из платформы «Медикаменте» и **зоной Data Lake/Lakehouse + BI** вставлен контур **governance + classification**. На [C4 Context (Task 2)](../Task2/c4-context-and-mvp.md) этот контур входит в состав платформы как единый блок; здесь он раскрыт на **контейнеры (C2)**.
 
 ---
 
@@ -30,7 +30,7 @@
 **Вне границы движка (на диаграмме):**
 
 - **Платформа «Медикаменте»** — источник данных (см. [Task 2](../Task2/c4-context-and-mvp.md)).
-- **DWH / ClickHouse** — приёмник: слои **Bronze / Silver / Gold** (или эквивалент), RLS и маскирование на витринах.
+- **Data Lake / Lakehouse (MinIO/S3 + ClickHouse marts)** — приёмник: слои **Bronze / Silver / Gold** (или эквивалент), хранение структурированных и неструктурированных данных, RLS и маскирование на витринах.
 
 ---
 
@@ -64,7 +64,8 @@
 - **Ingestion workers** — репликация по горизонтали в **Kubernetes**; разделение очередей по типам данных (ПДн / неперсональные).
 - **Message bus** — партиционирование по ключу (например, `patient_id` hash) для упорядочивания обновлений субъекта.
 - **Classification core** — вынос тяжёлого ML в отдельные поды или асинхронные вызовы; кэширование словарей политик.
-- **ClickHouse** — шардирование и политики хранения по доменам; отдельные кластеры для высокочувствительных витрин при необходимости.
+- **Data Lake (MinIO/S3)** — версионирование и lifecycle-политики для неструктурированных и сырых наборов.
+- **ClickHouse** — шардирование и политики хранения по доменам для trusted-витрин и агрегатов.
 
 ---
 
@@ -73,7 +74,7 @@
 | Task 2 | Task 6 |
 |--------|--------|
 | Один блок «платформа» на контексте | Внутри — движок как набор контейнеров |
-| Privacy-aware аналитика | Только после trusted load в DWH |
+| Privacy-aware аналитика | Только после trusted load в Data Lake/Lakehouse контур |
 | API лаборатории с минимизацией | Те же классы CLS применяются при загрузке лабораторных потоков |
 
 ---

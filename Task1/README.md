@@ -19,6 +19,7 @@
 | [dfd-p7-laboratory.drawio](dfd-p7-laboratory.drawio) | DFD **P7** — лаборатория, **неформализованный** поток от внешней Lab                                                                                  |
 | [dfd-p8-exchange.drawio](dfd-p8-exchange.drawio) | DFD **P8** — Exchange как канал ПДн                                                                                                                   |
 | [dfd-analytics-as-is.drawio](dfd-analytics-as-is.drawio) | DFD **аналитический контур As-Is**, Jupyter по Excel с FileServer (PRV-010)                                                                           |
+| [dfd-analytics-to-be.drawio](dfd-analytics-to-be.drawio) | DFD **аналитический контур To-Be**: явный **Classification Engine**, Data Lake, DLP, аудит, шифрование, RLS/маскирование |
 
 **Те же DFD в PlantUML:** каталог [plantuml/](plantuml/) — исходники `.puml`, общий стиль `_dfd-style.puml`, см. [plantuml/README.md](plantuml/README.md). Формулировки **`title`** и подписей потоков в `.puml` — эталон; в [dfd-drawio-title-recommendations.md](dfd-drawio-title-recommendations.md) описано выравнивание с `*.drawio`.
 
@@ -29,6 +30,7 @@
 - Процессы **P1–P8** заданы в [data-privacy-problems-and-dfd-index.md](data-privacy-problems-and-dfd-index.md) и в DFD этого каталога.
 - На схемах **красным** выделены подписи потоков с **ПДн/чувствительными медданными** или **проблемные/теневые** потоки (двойной учёт, ручной лабораторный контур).
 - Дополнительная DFD по аналитике не заменяет P1–P8, а фиксирует отдельный риск **PRV-010** для согласования с Task 6.
+- В To-Be DFD для аналитики добавлены технические меры: **Classification Engine** (rules + ML), **Policy & Tag Catalog**, **DLP**, централизованный **SIEM/audit**, шифрование и доступ по ролям.
 
 ## Рекомендации по выполнению
 

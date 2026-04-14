@@ -8,7 +8,7 @@
 
 | Файл | Содержание |
 |------|------------|
-| [c2-classification-engine.drawio](c2-classification-engine.drawio) | **C4 Containers:** Ingestion API, Classification core, Policy & Tag Catalog, message bus, workers, trusted loader, PostgreSQL, метрики; внешние платформа и **ClickHouse DWH** |
+| [c2-classification-engine.drawio](c2-classification-engine.drawio) | **C4 Containers:** Ingestion API, Classification core, Policy & Tag Catalog, message bus, workers, trusted loader, PostgreSQL, метрики; внешние платформа и **Data Lake/Lakehouse (MinIO/S3 + ClickHouse marts)** |
 | [c2-classification-engine.md](c2-classification-engine.md) | Роли контейнеров, слои **Bronze/Silver/Gold**, метрики, масштабирование, связь с Task 2–3 и 5 |
 
 Согласование с Task 2: [Task2/c4-context-and-mvp.md](../Task2/c4-context-and-mvp.md).
