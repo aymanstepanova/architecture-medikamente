@@ -1,0 +1,23 @@
+' Общие настройки стиля DFD Task1 (включается через !include)
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam ArrowThickness 1.2
+
+skinparam rectangle {
+  BackgroundColor<<EE>> #DAE8FC
+  BorderColor<<EE>> #6C8EBF
+  BackgroundColor<<P>> #FFF2CC
+  BorderColor<<P>> #D6B656
+  BackgroundColor<<SYS>> #D5E8D4
+  BorderColor<<SYS>> #82B366
+}
+
+skinparam database {
+  BackgroundColor #E1D5E7
+  BorderColor #9673A6
+}
+
+skinparam storage {
+  BackgroundColor #F8CECC
+  BorderColor #B85450
+}

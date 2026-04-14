@@ -1,0 +1,66 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Analytics-As-Is" id="dfd-analytics">
+    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hdr" value="&lt;b&gt;DFD Аналитический контур As-Is (Task 1)&lt;/b&gt;&lt;br/&gt;&lt;span style=&quot;font-size:11px;color:#333333&quot;&gt;Jupyter + Python, Excel с FileServer — PRV-010&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="40" y="12" width="920" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="leg" value="Легенда: &lt;b style=&quot;color:#b85450&quot;&gt;Красный / пунктир&lt;/b&gt; — риск утечки; PRV-010." style="text;html=1;strokeColor=none;fillColor=#f5f5f5;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="40" y="64" width="780" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ee_an" value="Business analyst&#xa;(IT)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="380" y="170" width="140" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="pa" value="A.0 Подготовка отчётов&#xa;(P&amp;L, ABC и др.)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="340" y="300" width="220" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="d_fs" value="D1: Excel на FileServer&#xa;(общий диск)" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="80" y="447" width="220" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="tool_j" value="Jupyter + Python" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="370" y="447" width="160" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="d_out" value="D2: Отчёты / ноутбуки&#xa;(локально)" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;fontStyle=1;verticalAlign=bottom;" parent="1" vertex="1">
+          <mxGeometry x="620" y="453.25" width="200" height="43.5" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="endArrow=classic;html=1;" parent="1" source="ee_an" target="pa" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1l" value="запрос аналитики" style="edgeLabel;html=1;align=center;resizable=0;points=[];" parent="e1" connectable="0" vertex="1">
+          <mxGeometry x="-0.15" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" style="endArrow=classic;html=1;" parent="1" source="d_fs" target="pa" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2l" value="выгрузки Excel&#xa;ПДн + операционка" style="edgeLabel;html=1;align=center;resizable=0;points=[];fontColor=#b85450;fontStyle=1" parent="e2" connectable="0" vertex="1">
+          <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+            <mxPoint y="-23" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" style="endArrow=classic;html=1;" parent="1" source="pa" target="tool_j" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3l" value="расчёты / скрипты" style="edgeLabel;html=1;align=center;resizable=0;points=[];" parent="e3" connectable="0" vertex="1">
+          <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" style="endArrow=classic;html=1;dashed=1;strokeColor=#b85450;" parent="1" source="pa" target="d_out" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4l" value="результаты без проверки на утечку&#xa;(PRV-010)" style="edgeLabel;html=1;align=center;resizable=0;points=[];fontColor=#b85450;fontStyle=1" parent="e4" connectable="0" vertex="1">
+          <mxGeometry x="-0.2" y="1" relative="1" as="geometry">
+            <mxPoint x="41" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T9uVYrjR-b4PEIBM2gQn-1" value="Нет маскирования, нет версионирования наборов, отчёты без DLP — Task 1, PRV-010" style="text;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=default;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="620" y="503" width="260" height="37" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

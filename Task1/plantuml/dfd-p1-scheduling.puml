@@ -1,0 +1,30 @@
+@startuml dfd_p1_scheduling
+!include _dfd-style.puml
+
+title DFD **P1** — Запись на приём и ведение расписания (As-Is)\n//Journals, Journal-Doctor-FIO//
+
+left to right direction
+
+rectangle "Patient\n(пациент)" as pat <<EE>>
+rectangle "Administrator\n(ресепшен)" as adm <<EE>>
+rectangle "Doctor" as doc <<EE>>
+rectangle "1.0 Запись на приём,\nведение журнала" as p1 <<P>>
+
+database "D1: Journal-Doctor-FIO\n(Excel)" as d1
+database "D2: Journals\n(папка FileServer)" as d2
+
+pat -[#B85450]-> p1 : **запрос на приём**\n//ПДн//
+adm -[#B85450]-> p1 : **ввод / корректировка**\n//ПДн//
+doc --> p1 : запрос расписания
+
+p1 -[#B85450]-> d1 : **записи приёма (ФИО, время)**\n//ПДн//
+p1 -[#B85450,dashed]-> d2 : **файлы / копии журналов**\n//ПДн//
+
+legend right
+  |= Условные обозначения |
+  | <<EE>> внешний субъект |
+  | <<P>> процесс |
+  | **database** хранилище данных |
+  | <color:#B85450>красная стрелка</color> ПДн / чувствительный поток |
+endlegend
+@enduml

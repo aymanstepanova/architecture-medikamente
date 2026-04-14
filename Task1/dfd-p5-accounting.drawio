@@ -1,0 +1,53 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="P5-Accounting" id="dfd-p5">
+    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hdr" value="&lt;h1&gt;&lt;b&gt;DFD P5 — Бухгалтерия, кадры, ЗП, налоги (As-Is)&lt;br&gt;&lt;/b&gt;&lt;span style=&quot;font-size:11px;color:#333333&quot;&gt;1С:Бухгалтерия, файловый режим&lt;/span&gt;&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="125" y="12" width="920" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="ee_bk" value="Bookkeeper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="525" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p5" value="5.0 Бухучёт, кадры,&#xa;налоги, ЗП" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="495" y="280" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="d1c" value="D1: 1С Бухгалтерия&#xa;(файл БД, кадры)" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="485" y="414" width="200" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="endArrow=classic;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" source="ee_bk" target="p5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1l" value="операции, проводки, кадровые ПДн&#xa;чувствительные" style="edgeLabel;html=1;align=center;resizable=0;points=[];fontColor=#b85450;fontStyle=1" parent="e1" connectable="0" vertex="1">
+          <mxGeometry x="-0.2" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" style="endArrow=classic;html=1;" parent="1" source="p5" target="d1c" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2l" value="чтение / запись учёта" style="edgeLabel;html=1;align=center;resizable=0;points=[];" parent="e2" connectable="0" vertex="1">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="-2" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iOxaq75Jai6FJuWhQT_T-1" value="Легенда" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="155" y="565" width="860" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="iOxaq75Jai6FJuWhQT_T-2" value="&lt;b&gt;Потоки:&lt;/b&gt; &lt;span style=&quot;color:#b85450&quot;&gt;красный&lt;/span&gt; — чувствительные ПДн (операции бухгалтера, проводки, кадровые данные); обычная стрелка — чтение / запись учётных записей в 1С." style="text;html=1;strokeColor=none;fillColor=#f5f5f5;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" parent="iOxaq75Jai6FJuWhQT_T-1" vertex="1">
+          <mxGeometry x="20" y="28" width="820" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="iOxaq75Jai6FJuWhQT_T-3" value="Внешний субъект (EE)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" parent="iOxaq75Jai6FJuWhQT_T-1" vertex="1">
+          <mxGeometry x="40" y="100" width="130" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="iOxaq75Jai6FJuWhQT_T-4" value="Процесс (P)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" parent="iOxaq75Jai6FJuWhQT_T-1" vertex="1">
+          <mxGeometry x="190" y="100" width="110" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="iOxaq75Jai6FJuWhQT_T-5" value="D1: 1С Бухгалтерия&#xa;(файл БД)" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#e1d5e7;strokeColor=#9673a6;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontStyle=1" parent="iOxaq75Jai6FJuWhQT_T-1" vertex="1">
+          <mxGeometry x="320" y="100" width="120" height="46" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

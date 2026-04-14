@@ -1,0 +1,64 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="P3-MedicalRecord" id="dfd-p3">
+    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hdr" value="&lt;h1&gt;&lt;b&gt;DFD P3 — Накопление дела пациента (документы) (As-Is)&lt;br&gt;&lt;/b&gt;&lt;span style=&quot;font-size:11px;color:#333333&quot;&gt;подпапки Patient-FIO-BD, сканы&lt;/span&gt;&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="125" y="30" width="920" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ee_adm" value="Administrator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="320" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ee_doc" value="Doctor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="730" y="160" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="3.0 Накопление документов дела" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="485" y="310" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="d_case" value="D1: Patient-FIO-BD&#xa;(подпапка, сканы JPG/PDF)" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="465" y="460" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="endArrow=classic;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" source="ee_adm" target="p3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1l" value="загрузка сканов, метаданные&#xa;ПДн / медданные" style="edgeLabel;html=1;align=center;resizable=0;points=[];fontColor=#b85450;fontStyle=1" parent="e1" connectable="0" vertex="1">
+          <mxGeometry x="-0.2" y="1" relative="1" as="geometry">
+            <mxPoint x="-3" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" style="endArrow=classic;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" source="ee_doc" target="p3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2l" value="записи через журнал / косвенный доступ&#xa;риск общего диска" style="edgeLabel;html=1;align=center;resizable=0;points=[];fontColor=#b85450;fontStyle=1" parent="e2" connectable="0" vertex="1">
+          <mxGeometry x="-0.2" y="1" relative="1" as="geometry">
+            <mxPoint x="-3" y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" style="endArrow=classic;html=1;" parent="1" source="p3" target="d_case" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3l" value="медданные, заключения&#xa;чувствительные" style="edgeLabel;html=1;align=center;resizable=0;points=[];fontColor=#b85450;fontStyle=1" parent="e3" connectable="0" vertex="1">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="-2" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leV5-XKrIDmTB2xEH3r9-1" value="Легенда" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="155" y="630" width="860" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="leg" value="Легенда: &lt;b style=&quot;color:#b85450&quot;&gt;Красный&lt;/b&gt; — ПДн/медданные. Риск PRV-006: общий диск без RBAC на объекты." style="text;html=1;strokeColor=none;fillColor=#f5f5f5;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" parent="leV5-XKrIDmTB2xEH3r9-1" vertex="1">
+          <mxGeometry x="40" y="30" width="780" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="leV5-XKrIDmTB2xEH3r9-2" value="Внешний субъект" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="leV5-XKrIDmTB2xEH3r9-1">
+          <mxGeometry x="230" y="83" width="125" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="leV5-XKrIDmTB2xEH3r9-3" value="Процесс" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="leV5-XKrIDmTB2xEH3r9-1">
+          <mxGeometry x="380" y="83" width="125" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="leV5-XKrIDmTB2xEH3r9-4" value="Хранилище" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#e1d5e7;strokeColor=#9673a6;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontStyle=1" vertex="1" parent="leV5-XKrIDmTB2xEH3r9-1">
+          <mxGeometry x="540" y="83" width="90" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

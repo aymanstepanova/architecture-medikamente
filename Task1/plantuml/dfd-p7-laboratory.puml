@@ -1,0 +1,21 @@
+@startuml dfd_p7_laboratory
+!include _dfd-style.puml
+
+title DFD **P7** — Учёт лабораторных анализов, ручной контур (As-Is)\n//неформализованный поток Lab → реестр (PRV-008)//
+
+left to right direction
+
+rectangle "Laboratory\n(внешняя)" as lab <<EE>>
+rectangle "Персонал\n(внутренний)" as st <<EE>>
+rectangle "7.0 Учёт результатов анализов" as p7 <<P>>
+
+database "D1: Laboratory Registry\n(папка)" as d1
+database "D2: RegistryByDate.xlsx" as d2
+
+lab -[#B85450,dashed]-> p7 : **результаты (бумага /\nустно / файл) — неформализовано**\n//PRV-008//
+st -[#B85450]-> p7 : **ручной ввод в реестр**\n//ПДн / лабораторные//
+
+p7 --> d1 : файлы реестра
+p7 -[#B85450]-> d2 : **лабораторные ПДн /\nмедданные**\n//чувствительные//
+
+@enduml

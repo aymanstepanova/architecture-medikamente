@@ -1,0 +1,18 @@
+@startuml dfd_p8_exchange
+!include _dfd-style.puml
+
+title DFD **P8** — Внутренние коммуникации, Exchange (As-Is)\n//канал ПДн вне учётных систем (PRV-009)//
+
+left to right direction
+
+rectangle "Сотрудник A" as a <<EE>>
+rectangle "Сотрудник B" as b <<EE>>
+rectangle "8.0 Пересылка сообщений\nи вложений" as p8 <<P>>
+
+database "D1: Exchange Mail Server\n(хранилище ящиков)" as d1
+
+a -[#B85450]-> p8 : **письмо, вложения**\n//возможны ПДн//
+p8 -[#B85450]-> b : **доставка**
+p8 --> d1 : хранение / журналы\n//(ограниченный контроль)//
+
+@enduml

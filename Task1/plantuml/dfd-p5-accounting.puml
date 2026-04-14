@@ -1,0 +1,16 @@
+@startuml dfd_p5_accounting
+!include _dfd-style.puml
+
+title DFD **P5** — Бухгалтерия, кадры, ЗП, налоги (As-Is)\n//1С:Бухгалтерия, файловый режим//
+
+left to right direction
+
+rectangle "Bookkeeper" as bk <<EE>>
+rectangle "5.0 Бухучёт, кадры,\nналоги, ЗП" as p5 <<P>>
+
+database "D1: 1С Бухгалтерия\n(файл БД, кадры)" as d1
+
+bk -[#B85450]-> p5 : **операции, проводки,\nкадровые ПДн**\n//чувствительные//
+p5 --> d1 : чтение / запись учёта
+
+@enduml

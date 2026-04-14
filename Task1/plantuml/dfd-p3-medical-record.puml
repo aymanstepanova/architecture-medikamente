@@ -1,0 +1,23 @@
+@startuml dfd_p3_medical_record
+!include _dfd-style.puml
+
+title DFD **P3** — Накопление дела пациента (документы) (As-Is)\n//подпапки Patient-FIO-BD, сканы//
+
+left to right direction
+
+rectangle "Administrator" as adm <<EE>>
+rectangle "Doctor" as doc <<EE>>
+rectangle "3.0 Накопление документов дела" as p3 <<P>>
+
+database "D1: Patient-FIO-BD\n(подпапка, JPG/PDF)" as d1
+
+adm -[#B85450]-> p3 : **загрузка сканов, метаданные**\n//ПДн / медданные//
+doc -[#B85450]-> p3 : **записи через журнал /\nкосвенный доступ**\n//риск общего диска//
+
+p3 -[#B85450]-> d1 : **медданные, заключения**\n//чувствительные//
+
+note bottom of d1
+  PRV-006: доступ через общий диск
+  без детального RBAC на объекты
+end note
+@enduml

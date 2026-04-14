@@ -1,0 +1,75 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="P7-Laboratory" id="dfd-p7">
+    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hdr" value="&lt;h1&gt;&lt;b&gt;DFD P7 — Учёт лабораторных анализов, ручной контур (As-Is)&lt;br&gt;&lt;/b&gt;&lt;span style=&quot;font-size:11px;color:#333333&quot;&gt;неформализованный поток Lab → реестр (PRV-008)&lt;/span&gt;&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="125" y="30" width="920" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="ee_lab" value="Laboratory&#xa;(внешняя)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="355" y="180" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ee_staff" value="Персонал&#xa;(внутренний)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="705" y="180" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p7" value="7.0 Учёт результатов&#xa;анализов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="485" y="334" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="d_reg" value="D1: Laboratory Registry&#xa;(папка)" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="305" y="490" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="d_xls" value="D2: RegistryByDate.xlsx" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="665" y="490" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e_shadow" style="endArrow=classic;html=1;dashed=1;strokeColor=#b85450;strokeWidth=2;" parent="1" source="ee_lab" target="p7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_shadow_l" value="результаты (бумага / устно / файл)&#xa;неформализовано · PRV-008" style="edgeLabel;html=1;align=center;resizable=0;points=[];fontColor=#b85450;fontStyle=1" parent="e_shadow" connectable="0" vertex="1">
+          <mxGeometry x="-0.2" y="-1" relative="1" as="geometry">
+            <mxPoint x="20" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e1" style="endArrow=classic;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" source="ee_staff" target="p7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1l" value="ручной ввод в реестр&#xa;ПДн / лабораторные" style="edgeLabel;html=1;align=center;resizable=0;points=[];fontColor=#b85450;fontStyle=1" parent="e1" connectable="0" vertex="1">
+          <mxGeometry x="-0.2" y="1" relative="1" as="geometry">
+            <mxPoint x="-3" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" style="endArrow=classic;html=1;" parent="1" source="p7" target="d_reg" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9WX0NpCIh8ICFKDJnm6U-1" value="Файлы реестра" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="e2" connectable="0" vertex="1">
+          <mxGeometry x="-0.0431" y="1" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" style="endArrow=classic;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" source="p7" target="d_xls" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3l" value="лабораторные ПДн / медданные&#xa;чувствительные" style="edgeLabel;html=1;align=center;resizable=0;points=[];fontColor=#b85450;fontStyle=1" parent="e3" connectable="0" vertex="1">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HA_DlQa7gYYI1fwLMZWL-1" value="Легенда" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="155" y="630" width="860" height="153" as="geometry" />
+        </mxCell>
+        <mxCell id="HA_DlQa7gYYI1fwLMZWL-2" value="Внешний субъект" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="HA_DlQa7gYYI1fwLMZWL-1">
+          <mxGeometry x="215" y="90" width="125" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="HA_DlQa7gYYI1fwLMZWL-3" value="Процесс" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="HA_DlQa7gYYI1fwLMZWL-1">
+          <mxGeometry x="367" y="90" width="125" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="HA_DlQa7gYYI1fwLMZWL-4" value="Легенда: &lt;b style=&quot;color:#b85450&quot;&gt;Красный&lt;/b&gt; — ПДн; пунктир — без маскирования на папке." style="text;html=1;strokeColor=none;fillColor=#f5f5f5;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="HA_DlQa7gYYI1fwLMZWL-1">
+          <mxGeometry x="25" y="40" width="720" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="HA_DlQa7gYYI1fwLMZWL-5" value="Хранилище" style="shape=partialRectangle;whiteSpace=wrap;html=1;align=left;spacingLeft=5;overflow=fill;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="HA_DlQa7gYYI1fwLMZWL-1">
+          <mxGeometry x="515" y="90" width="200" height="47" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
